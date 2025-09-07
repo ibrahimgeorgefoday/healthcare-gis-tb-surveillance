@@ -2,12 +2,12 @@
 [![CI](https://github.com/ibrahimgeorgefoday/healthcare-gis-tb-surveillance/actions/workflows/ci.yml/badge.svg)](https://github.com/ibrahimgeorgefoday/healthcare-gis-tb-surveillance/actions/workflows/ci.yml)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ibrahimgeorgefoday/healthcare-gis-tb-surveillance/blob/main/notebooks/01_eda.ipynb)
 
-Map crude TB incidence (per 100k) by admin area and publish an interactive Folium choropleth.
+Map crude TB incidence (per 100k) by admin area and publish an interactive Folium choropleth
 
 ---
 
 ## Problem
-Programs need a fast, reproducible view of **where** TB burden concentrates using de-identified data.
+Programs need a fast, reproducible view of **where** TB burden concentrates using de-identified data
 
 ## Data
 Sample files only (safe for Git):
