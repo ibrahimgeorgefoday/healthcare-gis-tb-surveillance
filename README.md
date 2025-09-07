@@ -7,7 +7,7 @@ Map crude TB incidence (per 100k) by admin area and publish an interactive Foliu
 ---
 
 ## Problem
-Programs need a fast, reproducible view of **where** TB burden concentrates using de-identified data
+Program need a fast, reproducible view of **where** TB burden concentrates using de-identified data
 
 ## Data
 Sample files only (safe for Git):
