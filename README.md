@@ -1,33 +1,35 @@
 # Healthcare GIS — TB Surveillance (Sierra Leone)
+[![CI](https://github.com/ibrahimgeorgefoday/healthcare-gis-tb-surveillance/actions/workflows/ci.yml/badge.svg)](https://github.com/ibrahimgeorgefoday/healthcare-gis-tb-surveillance/actions/workflows/ci.yml)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ibrahimgeorgefoday/healthcare-gis-tb-surveillance/blob/main/notebooks/01_eda.ipynb)
 
-Map crude TB incidence per 100,000 by admin area and publish an interactive Folium choropleth.
+Map crude TB incidence (per 100k) by admin area and publish an interactive Folium choropleth.
 
-![CI](https://github.com/ibrahimgeorgefoday/healthcare-gis-tb-surveillance/actions/workflows/ci.yml/badge.svg)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ibrahimgeorgefoday/healthcare-gis-tb-surveillance/blob/main/notebooks/02_maps.ipynb)
+---
 
 ## Problem
-Programs need a quick, reproducible view of **where** TB burden concentrates using safe (de-identified) data.
+Programs need a fast, reproducible view of **where** TB burden concentrates using de-identified data.
 
 ## Data
-- `data/sample/tb_cases_sample.csv` — columns: `admin_name,cases,population` (sample only)
-- `data/sample/admin_boundaries.geojson` — simplified boundaries (sample)
+Sample files only (safe for Git):
+- `data/sample/tb_cases_sample.csv` → `admin_name,cases,population`
+- `data/sample/admin_boundaries.geojson` → simplified admin polygons (WGS84)
 
-**Incidence (per 100k)** = `cases / population * 100000`.
+**Incidence** = `cases / population * 100000`.
 
 ## Method
-1. Load cases + admin boundaries
-2. Join by `admin_name`
-3. Compute crude incidence
-4. Visualize (Folium choropleth + markers)
-5. Export `reports/tb_map.html`
+1. Load cases + boundaries.
+2. Join on `admin_name`.
+3. Compute `incidence_100k`.
+4. Visualize with Folium (choropleth + markers).
+5. Export `reports/tb_map.html`.
 
-## Result
-- Quick hotspot map for review
-- Reproducible notebook for audits
-
-## Reproduce
+## Quickstart
 ```bash
+# 1) set up env
 python -m venv .venv
-. .venv/Scripts/activate  # Windows PowerShell: .\.venv\Scripts\Activate.ps1
-pip install -e .[dev]
+. .venv/Scripts/activate   # (Windows PowerShell: .\.venv\Scripts\Activate.ps1)
+pip install -U pip pandas geopandas folium jupyter nbconvert ruff pytest
+
+# 2) run notebooks
 jupyter lab
+# open: notebooks/01_eda.ipynb (smoke), notebooks/02_maps.ipynb (mapping)
